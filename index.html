@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My favorite t-shirt
+  </title>
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+</head>
+
+<body>
+  <p><strong>TSHIRT ORDERING FORM</strong></p>
+  <form method="POST" action="https://us-central1-fir-ac2be.cloudfunctions.net/formReader">
+    <!-- Title(select)
+          name
+        email
+      address (textarea)
+      size: xs,s,m,L,XL (single)
+      gender: (m or f)
+      Patterns: 'back print', 'front print', 'details' (multiples, any combination of those)-->
+
+    <fieldset>
+      <legend>CHOOSE YOUR FAVORITE T-SHIRT</legend>
+      <fieldset>
+        <legend>Your details</legend>
+        <label for="title">Title</label>
+        <select name="Title">
+          <option value="0">Mr.</option>
+          <option value="1">Mrs.</option>
+          <option value="2">Ms.</option>
+        </select>
+
+        <label for="full_name">Full Name</label>
+        <input type="text" id="full_name" name="full_name">
+        <fieldset>
+
+          <legend>Gender</legend>
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="female">
+        </fieldset>
+
+        <label for="email">Email address:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="address">Address</label>
+        <textarea name="Address" rows="3" cols="30"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>T-Shirt size</legend>
+
+        <label for="size">Select your size</label>
+        <select name="size">
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>T-Shirt Patterns</legend>
+        <label for="select">Select</label>
+        <select name="Patterns">
+          <option value="back print">back print</option>
+          <option value="front print">front print</option>
+          <option value="details">details</option>
+        </select>
+        <div>
+          <label for="file">Choose your favorite print</label>
+          <input type="file" id="file" name="myFile">
+        </div>
+        <label for="submit">Check details and submit </label>
+        <button type="submit">Submit</button>
+      </fieldset>
+    </fieldset>
+  </form>
+</body>
+
+</html>
